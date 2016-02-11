@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/* CSS Document */
+*{
+	font-family:"cabin", sans-serif;}
+.container-fluid h1{
+	text-align:center;}
+.col-xs-6.teamlogoA{
+	text-align:center;
+	margin-bottom:5%;}
+	
+.col-xs-6.teamlogoB{
+	text-align:center;
+	margin-bottom:5%;}
+	
+
+	
+.row.row-winsandloses{
+	background-color:#ccc;
+	color:#333;
+	font-size:28px;
+	text-align:center;
+	
+	}
+	
+	
+.row.row-actualwinsandloses{
+	background-color:#ccc;
+	color:#333;
+	font-size:60px;
+	text-align:center;
+	}	
+.row.row-pointspergame{
+	background-color:#333;
+	color:white;
+	font-size:28px;
+	text-align:center;
+	}	
+	
+	
+.row.row-actualpointspergame{
+	background-color:blue;
+	color:white;
+	font-size:60px;
+	text-align:center;
+	}
+	
+
+.row.row-reboundspergame{
+	background-color:#333;
+	color:white;
+	font-size:28px;
+	text-align:center;}
+	
+.row.row-actualreboundspergame{
+	background-color:blue;
+	color:white;
+	font-size:60px;
+	text-align:center;}
+
+.row.row-fieldgoalpercentage{
+	background-color:#333;
+	color:white;
+	font-size:28px;
+	text-align:center;}
+	
+
+	
+.row.row-actualfieldgoalpercentage{
+	background-color:blue;
+	color:white;
+	font-size:60px;
+	text-align:center;}
+	
+	
+.row.row-assistspergame{
+	background-color:#333;
+	color:white;
+	font-size:28px;
+	text-align:center;}
+	
+.row.row-actualassistspergame{
+	background-color:blue;
+	color:white;
+	font-size:60px;
+	text-align:center;}
+	
+	
+.row.row-blockspergame{
+	background-color:#333;
+	color:white;
+	font-size:28px;
+	text-align:center;}
+	
+.row.row-actualblockspergame{
+	background-color:blue;
+	color:white;
+	font-size:60px;
+	text-align:center;
+	}
+	
