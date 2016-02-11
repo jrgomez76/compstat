@@ -25,6 +25,41 @@
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,600" rel="stylesheet" type="text/css"> 
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<script>
+  $(function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
+
   </head>
 
 <style>
@@ -171,7 +206,17 @@ a {
 
 
 </style>
+<body>
+<div class="ui-widget">
+  <label for="tags">Tags: </label>
+  <input id="tags">
+</div>
+</body>
 
+
+
+<!--
+<body>
 <div class="site-container">
   <div class="site-pusher">
     
@@ -200,10 +245,11 @@ a {
       </label>
     </div>
   </div>
-
-
-    
+-->
   </body>
+
+
+
 
 <script>
       $(document).ready(function(){
