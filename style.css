@@ -194,5 +194,27 @@ body{
 	font-family: "cabin", sans-serif;
 	font-size: 48px;
 	line-height: 100px;
+}
+
+#team-stats-page-personal-img{
+	background-color: #ccc !important;
+}
+
+#team-stats-page-personal-img img{
+	width: 60%;
+}
+
+#team-stats-page-name{
+	display: block;
+	text-align: center;
+}
+
+#team-info-title-info{
+	text-align: left;
 	
+}
+
+#team-stats-page-personal-info p{
+	font-size: 36px;
+	margin-top: 18%;
 }
