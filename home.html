@@ -3,14 +3,13 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>Sports App</title>
+    <title>CompStat</title>
     
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+    
 
-    <link rel="stylesheet" type="text/css" href="style_erica.css">
-
-    <script src="/javascript/prefixfree.min.js"></script>
+    <script src="javascript/prefixfree.min.js"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
@@ -32,6 +31,7 @@ html,
 body{
   background-color: #01175F;
   font-family: sans-serif;
+  color:white;
 }
 
 .p {
@@ -67,10 +67,13 @@ a {
   background-color: #333;
 }
 
-.header__logo {
-  font-weight: 700;
-  padding: 0 25px;
-  float: right;
+
+
+img .header_logo{
+ display: block;
+    margin-left: auto;
+    margin-right: auto 
+
 }
 
 /* MENU */
@@ -167,18 +170,24 @@ a {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.6);
   }
+
+  .ui-widget{
+    padding-top: 20%:;
+  }
 }
 
 
 </style>
-
 <div class="site-container">
   <div class="site-pusher">
     
     <header class="header">
       
       <a href="#" class="header__icon" id="header__icon"></a>
-      <a href="#" class="header__logo">Logo</a>
+      <a href="#" class="header__logo"><img style="max-width:160px; margin-top: -7px;"
+             src="img/statlogo.png"></a>
+
+
       
       <nav class="menu">
         <a href="#">Home</a>
