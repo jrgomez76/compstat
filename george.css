@@ -36,6 +36,7 @@ a {
 
 .header {
     position: fixed;
+    top:0;
     left: 0;
     right: 0;
     height: 66px;
@@ -258,19 +259,7 @@ img .header_logo {
         font-size:45px;
         text-align:center;
         }
- .site-container {
-        overflow: hidden;
-    }
-.site-content {
-        position: absolute;
-        top: 66px;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        padding-top: 0;
-        overflow-y: scroll;
-        -webkit-overflow-scrolling: touch;
-    }
+
 
 @media only screen and (max-width: 768px) {
     .site-pusher,
@@ -352,7 +341,8 @@ img .header_logo {
         background-color: rgba(0, 0, 0, 0.6);
     }
     .ui-widget {
-        padding-top: 20%: ;
+        padding-top: 20%;
+        margin-top:20%;
     }
     .col-xs-6.teamlogoA{
         margin-top: -60px;}
