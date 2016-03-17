@@ -9,6 +9,7 @@ body {
     background-color: #01175F;
     font-family: sans-serif;
     color: white;
+	
 }
 
 .p {
@@ -38,6 +39,7 @@ a {
     position: fixed;
     left: 0;
     right: 0;
+	top: 0;
     height: 66px;
     line-height: 66px;
     color: #fff;
@@ -352,7 +354,7 @@ img .header_logo {
         background-color: rgba(0, 0, 0, 0.6);
     }
     .ui-widget {
-        padding-top: 20%: ;
+        margin-top: 20%; 
     }
     .col-xs-6.teamlogoA{
         margin-top: -60px;}
