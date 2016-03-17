@@ -14,11 +14,75 @@
 <link href="https://fonts.googleapis.com/css?family=Cabin:400,600" rel="stylesheet" type="text/css">
 <!-- Bootstrap JavaScript -->
 <script src="bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
-<style>
-
-</style>
 </head>
+
 <body>
+<?php
+
+error_reporting(E_ALL);
+
+
+
+include('server/getData.php');
+
+//1610612748 -- miami team id
+
+$current_month = date("m");
+$current_year = date("Y");
+
+$season = $current_year;
+
+if ($current_month < 11){
+$season = $current_year - 1;
+}
+
+
+
+
+$players = getData('boxscore/player',"&player_id=203507&season=$season");
+
+//echo $players;
+
+$json = json_decode($players);
+
+//var_dump($json);
+
+$fgm_sum = 0;
+$fga_sum = 0;
+$min_sum = 0;
+$pts_sum = 0;
+$ast_sum = 0;
+$stl_sum = 0;
+$oreb_sum = 0;
+$dreb_sum = 0;
+$plus_minus_sum = 0;
+
+$game_count = count($json);
+
+for ($i=0; $i<$game_count;$i++){
+$pts_sum = $pts_sum + $json[$i]->pts;
+$ast_sum = $ast_sum + $json[$i]->ast;
+$fgm_sum = $fgm_sum + $json[$i]->fgm;
+$fga_sum = $fga_sum + $json[$i]->fga;
+$min_sum = $min_sum + $json[$i]->min;
+$stl_sum = $stl_sum + $json[$i]->stl;
+$oreb_sum = $oreb_sum + $json[$i]->oreb;
+$dreb_sum = $dreb_sum + $json[$i]->dreb;
+$plus_minus_sum = $plus_minus_sum + $json[$i]->plus_minus;
+}
+$pts_avg = round($pts_sum/$game_count,1);
+$ast_avg = round($ast_sum/$game_count,1);
+$fgm_avg = round($fgm_sum/$game_count,1);
+$fga_avg = round($fga_sum/$game_count,1);
+$min_avg = round($min_sum/$game_count,1);
+$stl_avg = round($stl_sum/$game_count,1);
+$oreb_avg = round($oreb_sum/$game_count,1);
+$dreb_avg = round($dreb_sum/$game_count,1);
+$plus_minus_avg = round($plus_minus_sum/$game_count,1);
+?>
+
+
+
 <div class="container-fluid player-stats-page">
 	<div class="row player-stats-page-headerrow">
 		<div class="col-sm-12 player-stats-page-headercol">
@@ -60,57 +124,58 @@
    <div class="row player-stats-page-row3">
    	<div class="col-sm-6 player-stats-page-stats left">
     	<div class="stats-title-div"><p>POINTS</p></div>
-        <div class="stats-div"><p>18.7</p></div>
+        <div class="stats-div"><p><?php echo $pts_avg; ?></p></div>
     </div>
+    
     <div class="col-sm-6 player-stats-page-stats right">
-    	<div class="stats-title-div"><p>REBOUNDS</p></div>
-        <div class="stats-div"><p>4.5</p></div>
-    </div> 	 	
-   </div>
-   
-   <div class="row player-stats-page-row3">
-   	<div class="col-sm-6 player-stats-page-stats left">
     	<div class="stats-title-div"><p>ASSISTS</p></div>
-        <div class="stats-div"><p>4.8</p></div>
-    </div>
-    <div class="col-sm-6 player-stats-page-stats right">
-    	<div class="stats-title-div"><p>FG%</p></div>
-        <div class="stats-div"><p>48.9%</p></div>
+        <div class="stats-div"><p><?php echo $ast_avg; ?></p></div>
     </div> 	 	
    </div>
    
    <div class="row player-stats-page-row3">
    	<div class="col-sm-6 player-stats-page-stats left">
-    	<div class="stats-title-div"><p>3PT%</p></div>
-        <div class="stats-div"><p>31.6%</p></div>
+    	<div class="stats-title-div"><p>FGM</p></div>
+        <div class="stats-div"><p><?php echo $fgm_avg; ?></p></div>
     </div>
     <div class="col-sm-6 player-stats-page-stats right">
-    	<div class="stats-title-div"><p>FT%</p></div>
-        <div class="stats-div"><p>78.5%</p></div>
+    	<div class="stats-title-div"><p>FGA</p></div>
+        <div class="stats-div"><p><?php echo $fga_avg; ?></p></div>
     </div> 	 	
    </div>
    
    <div class="row player-stats-page-row3">
    	<div class="col-sm-6 player-stats-page-stats left">
-    	<div class="stats-title-div"><p>TURNOVERS</p></div>
-        <div class="stats-div"><p>2.1</p></div>
+    	<div class="stats-title-div"><p>MIN</p></div>
+        <div class="stats-div"><p><?php echo $min_avg; ?></p></div>
     </div>
     <div class="col-sm-6 player-stats-page-stats right">
-    	<div class="stats-title-div"><p>STEALS</p></div>
-        <div class="stats-div"><p>1.8</p></div>
+    	<div class="stats-title-div"><p>STL</p></div>
+        <div class="stats-div"><p><?php echo $stl_avg; ?></p></div>
     </div> 	 	
    </div>
    
    <div class="row player-stats-page-row3">
    	<div class="col-sm-6 player-stats-page-stats left">
-    	<div class="stats-title-div"><p>BLOCKS</p></div>
-        <div class="stats-div"><p>1.1</p></div>
+    	<div class="stats-title-div"><p>OREB</p></div>
+        <div class="stats-div"><p><?php echo $oreb_avg; ?></p></div>
     </div>
     <div class="col-sm-6 player-stats-page-stats right">
-    	<div class="stats-title-div"><p>MINUTES</p></div>
-        <div class="stats-div"><p>32.5</p></div>
+    	<div class="stats-title-div"><p>DREB</p></div>
+        <div class="stats-div"><p><?php echo $dreb_avg; ?></p></div>
     </div> 	 	
    </div>
+   
+   <!--<div class="row player-stats-page-row3">
+   	<div class="col-sm-6 player-stats-page-stats left">
+    	<div class="stats-title-div"><p>dreb</p></div>
+        <div class="stats-div"><p><?php echo $pts_dreb; ?></p></div>
+    </div>
+    <div class="col-sm-6 player-stats-page-stats right">
+    	<div class="stats-title-div"><p>PLUS</p></div>
+        <div class="stats-div"><p><?php echo $pts_PLUS; ?></p></div>
+    </div> 	 	
+   </div>-->
    
    <div class="row player-stats-page-row5">
 		<div class="col-sm-12 player-stats-page-compplayer">
