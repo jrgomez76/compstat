@@ -61,7 +61,7 @@ foreach ($my_player_list as $player) {
 </header>
 
  <div class="ui-widget">
-  <label for="tags">Player: </label>
+  <label for="tags">Player Search: </label>
   <input id="tags">
 </div>
 
