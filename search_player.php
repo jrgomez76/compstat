@@ -32,6 +32,11 @@ foreach ($my_player_list as $player) {
 
     <script src="javascript/prefixfree.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    
+    
     <!-- Normalize -->
     <!-- Boostrap CSS -->
     <link rel="stylesheet" href="bootstrap-3.3.6/dist/css/bootstrap.min.css">
