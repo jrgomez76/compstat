@@ -1,12 +1,13 @@
 @charset "UTF-8";
 /* CSS Document */
 *{
-        font-family:"cabin", sans-serif;}
+     font-family:"cabin", sans-serif;}
 
 
 html,
 body {
     background-color: #01175F;
+	background: cover;
     font-family: sans-serif;
     color: white;
 	
@@ -274,6 +275,10 @@ img .header_logo {
         -webkit-overflow-scrolling: touch;
     }
 
+
+.ui-widget {
+	margin-top:20%;
+    }
 @media only screen and (max-width: 768px) {
     .site-pusher,
     .site-container {
@@ -354,7 +359,7 @@ img .header_logo {
         background-color: rgba(0, 0, 0, 0.6);
     }
     .ui-widget {
-        margin-top: 20%; 
+         
     }
     .col-xs-6.teamlogoA{
         margin-top: -60px;}

@@ -56,7 +56,7 @@ foreach ($my_team_list as $team) {
       
     </header>
 
- <div class="ui-widget">
+ <div class="ui-widget" style="margin-top: 10%;">
   <label for="tags">Tags: </label>
   <input id="tags">
 </div>
