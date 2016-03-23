@@ -24,14 +24,6 @@
 
 
 
-
-
-
-
-
-
-
-
 <body>
     <?php
 
@@ -155,9 +147,10 @@ $plus_minus_avg1 = round($plus_minus_sum/$game_count,2);
             <a href="#" class="header__icon" id="header__icon"></a>
             <a href="#" class="header__logo"><img style="max-width:160px; margin-top: -7px;" src="img/statlogo.png"></a>
             <nav class="menu">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+                <a href="index.html">Home</a>
+                <a href="search_player.php">Player Stat</a>
+                <a href="search_teams.php">Team Stat</a>
+                <a href="player_comparison.php">Comparision</a>
             </nav>
     </div>
 </div>
