@@ -278,7 +278,17 @@ img .header_logo {
 
 .ui-widget {
 	margin-top:20%;
-    }
+	color: red;
+    
+	
+	}
+	
+	.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button{
+		color: #aaa;
+		
+		}
+	
+	
 @media only screen and (max-width: 768px) {
     .site-pusher,
     .site-container {
@@ -359,8 +369,9 @@ img .header_logo {
         background-color: rgba(0, 0, 0, 0.6);
     }
     .ui-widget {
-         
+        
     }
+	
     .col-xs-6.teamlogoA{
         margin-top: -60px;}
     .col-xs-6.teamlogoB{

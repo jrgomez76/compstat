@@ -28,7 +28,7 @@ foreach ($my_player_list as $player) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Search Player</title>
+    <title>Comparision</title>
 
     <script src="javascript/prefixfree.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -66,7 +66,7 @@ foreach ($my_player_list as $player) {
 </header>
 
  <div class="ui-widget">
-  <label for="tags">Player Search: </label>
+  <label for="tags">Comparision </label>
   <input id="tags">
 </div>
 
