@@ -25,6 +25,8 @@ error_reporting(E_ALL);
 
 include('server/getData.php');
 
+$player_id = $_GET["id"];
+
 //1610612748 -- miami team id
 
 $current_month = date("m");
@@ -39,7 +41,7 @@ $season = $current_year - 1;
 
 
 
-$players = getData('boxscore/player',"&player_id=203507&season=$season");
+$players = getData('boxscore/player',"&player_id=$player_id&season=$season");
 
 //echo $players;
 
