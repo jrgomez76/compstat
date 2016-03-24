@@ -279,6 +279,10 @@ img .header_logo {
 .ui-widget {
 	margin-top:20%;
     }
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button{
+	color:black;}	
+	
+	
 @media only screen and (max-width: 768px) {
     .site-pusher,
     .site-container {
