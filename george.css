@@ -45,6 +45,7 @@ a {
     line-height: 66px;
     color: #fff;
     background-color: #333;
+    text-align: right;
 }
 
 img .header_logo {
@@ -278,9 +279,21 @@ img .header_logo {
 
 .ui-widget {
 	margin-top:20%;
+<<<<<<< HEAD
     }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button{
 	color:black;}	
+=======
+	color: red;
+    
+	
+	}
+	
+	.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button{
+		color: #aaa;
+		
+		}
+>>>>>>> 4d9db8603c94742e89d82d244fcaac7abc718e32
 	
 	
 @media only screen and (max-width: 768px) {
@@ -363,8 +376,9 @@ img .header_logo {
         background-color: rgba(0, 0, 0, 0.6);
     }
     .ui-widget {
-         
+        
     }
+	
     .col-xs-6.teamlogoA{
         margin-top: -60px;}
     .col-xs-6.teamlogoB{
