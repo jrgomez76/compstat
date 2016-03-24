@@ -21,6 +21,7 @@
 error_reporting(E_ALL);
 
 include('server/getData.php');
+$team_id = $_GET["id"];
 
 //1610612748 -- miami team id
 
@@ -36,13 +37,23 @@ if ($current_month < 11){
 //echo "Season" . $season;
 
 
-$teams = getData('boxscore/team',"&team_id=1610612748&season=$season");   //SPECIFIES THE DATA TO GRAB FROM API
+$teams = getData('boxscore/team',"&team_id=$team_id&season=$season"); 
+$teamData = getData('team', "&team_id=$team_id");
+
 
 //echo $teams; //THIS HELPS TO CHECK STAT ABBREVIATIONS
 
 $json = json_decode($teams);
+$jsonTeamData = json_decode($teamData);
 
-//var_dump($json);
+
+
+var_dump($jsonTeamData[0]);
+
+$city = $jsonTeamData[0]->city;
+$team_name = $jsonTeamData[0]->team_name;
+
+$photoUrl = "https://upload.wikimedia.org/wikipedia/en/f/fb/".$city . "_" . $team_name . "_logo.svg";
 
 $fgm_sum = 0;     //THE BEGINING VALUE FOR ALL LOOP VARIABLES
 $fga_sum = 0;
@@ -98,7 +109,7 @@ $fg3m_avg = round($fg3m_sum/$game_count,1);
   
   <div class="row player-stats-page-row1">
   	<div class="col-sm-6 player-stats-page-personal-img" id="team-stats-page-personal-img">
-    	<img src="img/heat-logo.png">
+    	<img src="<?=$photoUrl ?>">
     </div>
     
     <div class="col-sm-6 player-stats-page-personal-info" id="team-stats-page-personal-info">
@@ -109,7 +120,7 @@ $fg3m_avg = round($fg3m_sum/$game_count,1);
          	<p>COACH:</p>
         </div>
         <div class="info-title-info" id="team-info-title-info"> 
-         	<p>Miami, FL</p>
+         	<p><?= $city ?></p>
          	<p>AA Arena</p>
          	<p>Mickey Arison</p>
          	<p>Erik Spolstra</p>
@@ -120,7 +131,7 @@ $fg3m_avg = round($fg3m_sum/$game_count,1);
   <div class="container-fluid">
     <div class="row player-stats-page-row2">
   		<div class="col-sm-12 player-stats-page-name" id="team-stats-page-name">
-    		<p>MIAMI HEAT</p>
+    		<p><?= $team_name ?></p>
         </div>
    </div> 
    </div>

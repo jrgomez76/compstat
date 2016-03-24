@@ -27,6 +27,7 @@ include('server/getData.php');
 
 $player_id = $_GET["id"];
 
+
 //1610612748 -- miami team id
 
 $current_month = date("m");
@@ -42,12 +43,18 @@ $season = $current_year - 1;
 
 
 $players = getData('boxscore/player',"&player_id=$player_id&season=$season");
+$playerData = getData('player', "&player_id=$player_id");
 
-//echo $players;
+echo $playerData;
 
 $json = json_decode($players);
+$jsonPlayerData = json_decode($playerData);
 
 //var_dump($json);
+
+$player_name = $jsonPlayerData[0]->player_name;
+$birth_date = $jsonPlayerData[0]->birth_date;
+$position = $jsonPlayerData[0]->position;
 
 $fgm_sum = 0;
 $fga_sum = 0;
@@ -106,10 +113,10 @@ $plus_minus_avg = round($plus_minus_sum/$game_count,1);
          	<p>DOB:</p>
         </div>
         <div class="info-title-info"> 
-         	<p>SG</p>
+         <p>	<?= $position ?></p>
          	<p>6'4"</p>
          	<p>210</p>
-         	<p>1/17/88</p>
+         <p>	<?= $birth_date ?></p>
         </div>
        </div>
    </div>
@@ -117,7 +124,7 @@ $plus_minus_avg = round($plus_minus_sum/$game_count,1);
 	<div class="row player-stats-page-row2">
   		<div class="col-sm-4 player-stats-page-name">
     		<div class="name-banner" id="bannernumber"><p>#6</p></div>
-        	<div class="name-banner" id="bannername"><p>DWYANE WADE</p></div>
+        	<div class="name-banner" id="bannername"><p><?= $player_name ?></p></div>
         	<div class="name-banner" id="bannerlogo"><p><img src="http://content.sportslogos.net/logos/6/214/thumbs/93lzfcfcnq125eh7etyxpuhfp.gif"></p></div>
     	</div>
    </div> 

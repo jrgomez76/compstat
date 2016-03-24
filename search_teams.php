@@ -15,7 +15,7 @@ $my_team_list = json_decode($my_json_list);
 //list to ,"value", "value", "value"
 $js_list = "";
 foreach ($my_team_list as $team) {
-    $js_list .= ',"'.$team->team_name.'"';
+    $js_list .= ',{label: "'.$team->team_name.'", value:"'.$team->id.'"}';
 }
    
  $js_list = substr($js_list, 1);
@@ -41,6 +41,8 @@ foreach ($my_team_list as $team) {
     <script src="bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="george.css">
     <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </head>
 <body>
 
@@ -73,13 +75,12 @@ foreach ($my_team_list as $team) {
     $( "#tags" ).autocomplete({
       source: availableTags
     });
+	
+		$( "#tags" ).on( "autocompleteselect", function( event, ui ) {
+		window.location.replace("teamstats.php?id=" + ui.item.value)
   });
-  </script>
-
-  <script>
-    $(document).ready(function() {
-
-        (function($) {
+  
+   (function($) {
 
             $('#header__icon').click(function(e) {
                 e.preventDefault();
